@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+  seed.html - Temporary Developer Test Data Seeder
+  Used exclusively for testing the 7-day rolling suggestion rule and party order integrations.
+  Contains isTest: true on all documents.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seed Test Data - Dhaba Prep Assistant</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { padding: 20px; }
+    .seed-card {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .status-box {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      font-size: 14px;
+      min-height: 48px;
+    }
+  </style>
+</head>
+<body>
+  <div class="seed-card">
+    <h2 style="font-size: 20px; margin-bottom: 8px;">Dhaba Test Data Seeder</h2>
+    <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">
+      Adds realistic 7-day historical logs and 1 upcoming party order for testing suggestions.
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <button id="seed-add-btn" class="btn-primary" style="background-color: #15803d;">
+        1. Add Test Data (7 days logs + 1 party)
+      </button>
+
+      <button id="seed-delete-btn" class="btn-secondary" style="color: #b91c1c; border-color: #fca5a5;">
+        2. Delete All Test Data (isTest: true)
+      </button>
+    </div>
+
+    <div id="status-display" class="status-box">Ready. Click a button to begin.</div>
+  </div>
+
+  <script type="module">
+    import { toDateStr } from "./js/app.js";
+    import { saveDayLog, savePartyOrder } from "./js/db.js";
+
+    const statusEl = document.getElementById("status-display");
+    const addBtn = document.getElementById("seed-add-btn");
+    const deleteBtn = document.getElementById("seed-delete-btn");
+
+    function log(msg) {
+      statusEl.innerHTML += `<div>${msg}</div>`;
+      console.log(msg);
+    }
+
+    addBtn.addEventListener("click", async () => {
+      statusEl.innerHTML = "Seeding data...<br>";
+      addBtn.disabled = true;
+
+      try {
+        const today = new Date();
+        // Generate past 7 days logs
+        for (let i = 1; i <= 7; i++) {
+          const d = new Date(today);
+          d.setDate(today.getDate() - i);
+          const dateStr = toDateStr(d);
+
+          // Realistic variation for a small dhaba
+          const factor = 1 + (i % 3) * 0.1;
+          const entries = [
+            {
+              itemId: "prep_dal",
+              name: "Dal",
+              unit: "kg",
+              made: Number((10 * factor).toFixed(1)),
+              left: Number((1.5 * factor).toFixed(1)),
+              wasted: Number((0.5).toFixed(1))
+            },
+            {
+              itemId: "prep_paneer",
+              name: "Paneer",
+              unit: "kg",
+              made: Number((5 * factor).toFixed(1)),
+              left: Number((0.8 * factor).toFixed(1)),
+              wasted: Number((0.2).toFixed(1))
+            },
+            {
+              itemId: "prep_veg",
+              name: "Mixed veg",
+              unit: "kg",
+              made: Number((6 * factor).toFixed(1)),
+              left: Number((1.0 * factor).toFixed(1)),
+              wasted: Number((0.3).toFixed(1))
+            },
+            {
+              itemId: "prep_rice",
+              name: "Rice",
+              unit: "kg",
+              made: Number((8 * factor).toFixed(1)),
+              left: Number((1.2 * factor).toFixed(1)),
+              wasted: Number((0.4).toFixed(1))
+            }
+          ];
+
+          await saveDayLog(dateStr, entries);
+          // Mark test flag in localStore or Firestore
+          const stored = localStorage.getItem("dhaba_dayLogs");
+          if (stored) {
+            const list = JSON.parse(stored);
+            const found = list.find(l => l.date === dateStr);
+            if (found) found.isTest = true;
+            localStorage.setItem("dhaba_dayLogs", JSON.stringify(list));
+          }
+          log(`&bull; Saved log for ${dateStr}`);
+        }
+
+        // Add 1 party order for tomorrow
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
+        const tomorrowStr = toDateStr(tomorrow);
+
+        await savePartyOrder({
+          date: tomorrowStr,
+          headCount: 20,
+          items: [
+            { name: "Paneer", unit: "kg", qty: 2 },
+            { name: "Rice", unit: "kg", qty: 3 }
+          ],
+          advancePaid: 1000,
+          isTest: true
+        });
+
+        // Ensure isTest is true
+        const storedOrders = localStorage.getItem("dhaba_partyOrders");
+        if (storedOrders) {
+          const list = JSON.parse(storedOrders);
+          if (list.length > 0) list[list.length - 1].isTest = true;
+          localStorage.setItem("dhaba_partyOrders", JSON.stringify(list));
+        }
+
+        log(`&bull; Added party order for tomorrow (${tomorrowStr}): 20 guests, 2 kg paneer, 3 kg rice.`);
+        log("<strong>Success: Test data successfully loaded!</strong>");
+      } catch (err) {
+        log(`<span style="color: red;">Error: ${err.message}</span>`);
+      } finally {
+        addBtn.disabled = false;
+      }
+    });
+
+    deleteBtn.addEventListener("click", () => {
+      statusEl.innerHTML = "Deleting test data...<br>";
+      const collections = ["dayLogs", "partyOrders", "prepPlans", "closingCounts", "morningChecks"];
+      collections.forEach(col => {
+        const raw = localStorage.getItem(`dhaba_${col}`);
+        if (raw) {
+          const list = JSON.parse(raw);
+          const filtered = list.filter(item => !item.isTest);
+          localStorage.setItem(`dhaba_${col}`, JSON.stringify(filtered));
+        }
+      });
+      log("<strong>All test data with isTest: true has been deleted!</strong>");
+    });
+  </script>
+</body>
+</html>

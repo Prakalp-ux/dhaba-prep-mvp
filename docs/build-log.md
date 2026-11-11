@@ -79,3 +79,17 @@
 - **What Broke:** Initial form allowed submitting zero food item rows, which could create an empty demand record.
 - **How I Fixed It:** Added validation requiring at least one valid food item with positive quantity before saving.
 - **Commit Message:** `Add party order entry and upcoming list`
+
+---
+
+## Session 6: Task 2.5 - Temporary Test Data Seed Page (seed.html)
+- **Date & Task:** 12 Nov - Test Data Seeder (seed.html)
+- **Prompt Used:**
+  > Create a temporary developer-only page seed.html that is NOT linked from anywhere in the app. It has two buttons:
+  > 1. 'Add test data': writes dayLogs for each of the last 7 days (before today) for all four prep items, with realistic made/left/wasted numbers for a small dhaba that vary from day to day (for example paneer made 5 kg, left 0.5 to 1 kg, wasted 0 to 0.5 kg). Also writes one partyOrders document for tomorrow (20 people, 2 kg paneer, 3 kg rice).
+  > 2. 'Delete all test data': deletes every document in dayLogs, partyOrders, prepPlans, closingCounts and morningChecks where isTest is true.
+  > Every test document must contain isTest: true. Do not change any other file. In the last line of your answer write: 'Delete seed.html before the final deploy.'
+- **What Worked:** Created standalone `seed.html` with two clear buttons. Successfully writes 7 previous day logs for all 4 items and 1 party order for tomorrow with `isTest: true`. Also provides 1-click clean deletion of test records.
+- **What Broke:** None. Standalone developer utility operating independently without polluting navigation.
+- **How I Fixed It:** Verified that `seed.html` is completely unlinked from user-facing screens and tagged every generated record with `isTest: true`.
+- **Commit Message:** `Add temporary seed page for test data`
