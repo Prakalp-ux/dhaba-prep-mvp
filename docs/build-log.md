@@ -130,3 +130,18 @@
 - **What Broke:** Difference calculation could show floating-point artifacts like `-0.1999999999999` if non-integer values were compared.
 - **How I Fixed It:** Passed diff values through `roundToHalf()` to ensure clean human-readable increments.
 - **Commit Message:** `Add closing count, handover note and since-last-night view`
+
+---
+
+## Session 9: Step 11 - Mobile Viewport & Bug Sweep
+- **Date & Task:** 12 Nov - Mobile Usability Sweep (360x640 & 390x844)
+- **Prompt Used:**
+  > Do not add features. Review the whole app for bugs and phone usability.
+  > - Open every screen at 360x640 and 390x844. Fix text that is cut off, buttons smaller than 48 px, and anything that needs sideways scrolling.
+  > - Test empty states: no items, no logs, no closing count, no party orders. Fix any NaN, undefined, blank screen or console error.
+  > - Check that every screen except Today has a Back arrow and that number inputs open the numeric keypad.
+  > - List every issue you found and every fix, one line each, so I can copy them into my build log.
+- **What Worked:** Verified that all tap targets exceed 48px height, all number inputs have `inputmode="decimal"` or `inputmode="numeric"`, Back arrow is consistently visible on screens B, C, D, D2, and E, and zero horizontal scrolling occurs at 360px width.
+- **What Broke:** On 360px viewport, party item selection row cramped when item names were long.
+- **How I Fixed It:** Adjusted `.party-item-row` flex proportions to `flex: 2` for select and `flex: 1` for quantity input, preventing text truncation. Verified empty states show plain readable English instead of `NaN` or blank elements.
+- **Commit Message:** `Fix layout and empty-state bugs found in phone test`
