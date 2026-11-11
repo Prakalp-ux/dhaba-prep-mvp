@@ -93,3 +93,20 @@
 - **What Broke:** None. Standalone developer utility operating independently without polluting navigation.
 - **How I Fixed It:** Verified that `seed.html` is completely unlinked from user-facing screens and tagged every generated record with `isTest: true`.
 - **Commit Message:** `Add temporary seed page for test data`
+
+---
+
+## Session 7: Task 3 - Tomorrow's Prep Suggestion Engine (Must-have 2)
+- **Date & Task:** 12 Nov - Task 3 Tomorrow's Prep (Screen C)
+- **Prompt Used:**
+  > Build Task 3 only: Tomorrow's prep (screen C). Use exactly the suggestion rule in Section 1.8 of the brief.
+  > - Put the rule in one clearly named function in js/suggestion.js with comments. Keep the buffer as one constant at the top: BUFFER = 0.10.
+  > - Before coding, show me the formula worked out on 3 sample numbers so I can check it by hand.
+  > - Screen: tomorrow's date as heading. For each prep item show the suggested quantity with a minus and plus button (step 0.5) and the note line from the brief ('Based on last 7 days', 'Based on N day(s) of logs - not enough yet', or 'No logs yet - enter a quantity yourself').
+  > - Below, show Party extras separately, one line per party dated tomorrow, like 'Party Sat: +2 kg paneer'. Show a final total per item = my adjusted quantity + party extras.
+  > - 'Confirm prep list' saves one document to 'prepPlans' with tomorrow's date as its id (replace if it exists) and shows 'Saved'. If a confirmed plan already exists, load its adjusted values.
+  > - No NaN, no negative numbers and no blank screen when there are zero logs.
+- **What Worked:** Created `js/suggestion.js` implementing $sold = made - left - wasted$, 7-day average, 10% safety buffer ($BUFFER = 0.10$), and 0.5 unit rounding (`Math.round(val * 2) / 2`). Handled empty state gracefully without `NaN`. Party extras for tomorrow are added on separate highlighted rows and included in the final prep total.
+- **What Broke:** Stepper could decrement below 0 if clicked repeatedly on items with zero baseline.
+- **How I Fixed It:** Added guard check preventing adjusted quantity from dropping below 0.
+- **Commit Message:** `Add tomorrow's prep suggestion with party extras`

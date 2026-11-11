@@ -1,6 +1,6 @@
 // js/app.js
 // Main controller for Dhaba Prep Assistant MVP
-// Handles screen navigation, date formatting, End-of-day logging, and Party orders
+// Handles screen navigation, date formatting, End-of-day logging, Party orders, and Tomorrow's Prep Suggestions
 
 import { 
   initDefaultItems, 
@@ -8,10 +8,15 @@ import {
   addItem, 
   saveDayLog, 
   getDayLog, 
+  getRecentDayLogs,
   savePartyOrder,
   getUpcomingPartyOrders,
-  deletePartyOrder
+  deletePartyOrder,
+  savePrepPlan,
+  getPrepPlan
 } from "./db.js";
+
+import { calculatePrepSuggestion, roundToHalf } from "./suggestion.js";
 
 // Screen state management
 const screens = {
@@ -50,7 +55,14 @@ const partyAdvanceInput = document.getElementById("party-advance");
 const partySaveBtn = document.getElementById("party-save-btn");
 const partyUpcomingList = document.getElementById("party-upcoming-list");
 
+// Tomorrow's prep screen elements
+const prepDateHeading = document.getElementById("prep-date-heading");
+const prepConfirmedBadge = document.getElementById("prep-confirmed-badge");
+const prepItemsList = document.getElementById("prep-items-list");
+const prepConfirmBtn = document.getElementById("prep-confirm-btn");
+
 let cachedPrepItems = [];
+let currentPrepState = []; // Holds items for tomorrow's prep
 
 /**
  * Format a Date object into human-readable label: "Today - Sat 7 Nov"
@@ -510,6 +522,183 @@ async function handlePartySave() {
   }
 }
 
+// -----------------------------------------------------------------------------
+// Task 3: Tomorrow's Prep Suggestion (Screen C)
+// -----------------------------------------------------------------------------
+
+async function loadPrepScreen() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowStr = toDateStr(tomorrow);
+
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const headingText = `Prep for ${days[tomorrow.getDay()]} ${tomorrow.getDate()} ${months[tomorrow.getMonth()]}`;
+  prepDateHeading.textContent = headingText;
+
+  // 1. Fetch prep items
+  cachedPrepItems = await getItems("prep");
+
+  // 2. Fetch past 7 days logs prior to tomorrow
+  const recentLogs = await getRecentDayLogs(tomorrowStr, 7);
+
+  // 3. Fetch party orders scheduled for tomorrow
+  const tomorrowPartyOrders = (await getUpcomingPartyOrders(tomorrowStr)).filter(o => o.date === tomorrowStr);
+
+  // 4. Fetch existing confirmed prep plan if already saved
+  const existingPlan = await getPrepPlan(tomorrowStr);
+  const existingLinesMap = {};
+  if (existingPlan && existingPlan.lines) {
+    prepConfirmedBadge.classList.remove("hidden");
+    existingPlan.lines.forEach(l => {
+      existingLinesMap[l.name.toLowerCase()] = l;
+    });
+  } else {
+    prepConfirmedBadge.classList.add("hidden");
+  }
+
+  currentPrepState = [];
+  prepItemsList.innerHTML = "";
+
+  if (cachedPrepItems.length === 0) {
+    prepItemsList.innerHTML = `<div class="empty-notice">No prep items found. Log items first in End-of-day log.</div>`;
+    return;
+  }
+
+  // Build recommendation per item
+  cachedPrepItems.forEach(item => {
+    const { suggested, logCount, note } = calculatePrepSuggestion(item.name, recentLogs);
+
+    // Sum up party extras for this item tomorrow
+    let partyExtra = 0;
+    const partyDescriptions = [];
+    tomorrowPartyOrders.forEach(order => {
+      if (order.items) {
+        order.items.forEach(pItem => {
+          if (pItem.name.trim().toLowerCase() === item.name.trim().toLowerCase()) {
+            const q = parseFloat(pItem.qty) || 0;
+            partyExtra += q;
+            partyDescriptions.push(`Party (${order.headCount} guests): +${q} ${item.unit}`);
+          }
+        });
+      }
+    });
+
+    // Check if user previously confirmed/adjusted a value
+    const existing = existingLinesMap[item.name.toLowerCase()];
+    let adjusted = existing !== undefined ? existing.adjusted : suggested;
+    adjusted = roundToHalf(adjusted);
+
+    const total = roundToHalf(adjusted + partyExtra);
+
+    const itemState = {
+      itemId: item.id,
+      name: item.name,
+      unit: item.unit,
+      suggested,
+      adjusted,
+      partyExtra,
+      total,
+      partyDescriptions
+    };
+    currentPrepState.push(itemState);
+
+    // Render Card
+    const card = document.createElement("div");
+    card.className = "prep-item-card";
+    card.dataset.itemName = item.name;
+
+    const partyExtraHtml = partyDescriptions.length > 0 
+      ? partyDescriptions.map(desc => `<div class="party-extra-line">${desc}</div>`).join("")
+      : "";
+
+    card.innerHTML = `
+      <div class="prep-item-top">
+        <span class="prep-item-title">${item.name}</span>
+        <span class="prep-note-badge">${note}</span>
+      </div>
+
+      <div class="prep-stepper-row">
+        <button type="button" class="stepper-btn btn-minus" aria-label="Decrease quantity">&minus;</button>
+        <div class="prep-qty-display">
+          <span class="prep-qty-val adjusted-val">${adjusted}</span>
+          <span class="prep-qty-unit">${item.unit}</span>
+        </div>
+        <button type="button" class="stepper-btn btn-plus" aria-label="Increase quantity">&plus;</button>
+      </div>
+
+      ${partyExtraHtml}
+
+      <div class="prep-total-line">
+        <span>Total Tomorrow:</span>
+        <span class="total-val">${total} ${item.unit}</span>
+      </div>
+    `;
+
+    // Stepper event listeners
+    const minusBtn = card.querySelector(".btn-minus");
+    const plusBtn = card.querySelector(".btn-plus");
+    const adjustedValEl = card.querySelector(".adjusted-val");
+    const totalValEl = card.querySelector(".total-val");
+
+    minusBtn.addEventListener("click", () => {
+      if (itemState.adjusted >= 0.5) {
+        itemState.adjusted = roundToHalf(itemState.adjusted - 0.5);
+        itemState.total = roundToHalf(itemState.adjusted + itemState.partyExtra);
+        adjustedValEl.textContent = itemState.adjusted;
+        totalValEl.textContent = `${itemState.total} ${item.unit}`;
+      }
+    });
+
+    plusBtn.addEventListener("click", () => {
+      itemState.adjusted = roundToHalf(itemState.adjusted + 0.5);
+      itemState.total = roundToHalf(itemState.adjusted + itemState.partyExtra);
+      adjustedValEl.textContent = itemState.adjusted;
+      totalValEl.textContent = `${itemState.total} ${item.unit}`;
+    });
+
+    prepItemsList.appendChild(card);
+  });
+}
+
+async function handleConfirmPrepList() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowStr = toDateStr(tomorrow);
+
+  if (!currentPrepState || currentPrepState.length === 0) {
+    showToast("No items to confirm");
+    return;
+  }
+
+  const lines = currentPrepState.map(it => ({
+    itemId: it.itemId,
+    name: it.name,
+    unit: it.unit,
+    suggested: it.suggested,
+    adjusted: it.adjusted,
+    partyExtra: it.partyExtra,
+    total: it.total
+  }));
+
+  try {
+    prepConfirmBtn.disabled = true;
+    prepConfirmBtn.textContent = "Saving...";
+    await savePrepPlan(tomorrowStr, lines);
+    showToast("Saved");
+    prepConfirmedBadge.classList.remove("hidden");
+    setTimeout(() => {
+      showScreen("today", "Today");
+    }, 400);
+  } catch (err) {
+    console.error("Error confirming prep plan:", err);
+    showToast("Could not confirm plan. Try again.");
+  } finally {
+    prepConfirmBtn.disabled = false;
+    prepConfirmBtn.textContent = "Confirm prep list";
+  }
+}
+
 // Setup Event Listeners
 function setupEventListeners() {
   // Navigation buttons from Home
@@ -520,6 +709,7 @@ function setupEventListeners() {
 
   document.getElementById("nav-prep")?.addEventListener("click", () => {
     showScreen("prep", "Tomorrow's prep");
+    loadPrepScreen();
   });
 
   document.getElementById("nav-closing")?.addEventListener("click", () => {
@@ -581,6 +771,9 @@ function setupEventListeners() {
   });
 
   partySaveBtn?.addEventListener("click", handlePartySave);
+
+  // Tomorrow's prep confirm listener
+  prepConfirmBtn?.addEventListener("click", handleConfirmPrepList);
 }
 
 // App Initialization

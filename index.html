@@ -92,12 +92,20 @@
         </button>
       </section>
 
-      <!-- Screen C: Tomorrow's prep (Placeholder for Task 3) -->
+      <!-- Screen C: Tomorrow's prep (Task 3, Must-have 2) -->
       <section id="screen-prep" class="screen hidden">
-        <div class="placeholder-card">
-          <h2>Tomorrow's prep</h2>
-          <p>Rolling 7-day suggested quantities with plus/minus adjustments.</p>
+        <div class="prep-header-box">
+          <span class="prep-date-title" id="prep-date-heading">Prep for Tomorrow</span>
+          <span id="prep-confirmed-badge" class="badge hidden" style="background-color: var(--success);">Confirmed</span>
         </div>
+
+        <div id="prep-items-list">
+          <!-- Dynamic prep item recommendation cards rendered by app.js -->
+        </div>
+
+        <button id="prep-confirm-btn" class="btn-primary" style="margin-top: 14px;">
+          Confirm prep list
+        </button>
       </section>
 
       <!-- Screen D: Closing count (Placeholder for Task 4) -->
