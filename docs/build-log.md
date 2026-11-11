@@ -110,3 +110,23 @@
 - **What Broke:** Stepper could decrement below 0 if clicked repeatedly on items with zero baseline.
 - **How I Fixed It:** Added guard check preventing adjusted quantity from dropping below 0.
 - **Commit Message:** `Add tomorrow's prep suggestion with party extras`
+
+---
+
+## Session 8: Task 4 - Closing Count, Handover Note & Since Last Night (Must-have 3)
+- **Date & Task:** 12 Nov - Task 4 Closing Count & Morning View (Screens D & D2)
+- **Prompt Used:**
+  > Build Task 4 only: Closing count and 'Since last night' (screens D and D2).
+  > Closing count (D):
+  > - A 'Your name' field, a number input for each stock item (items with type 'stock': Milk L, Paneer kg, Eggs pcs, Bread pcs), '+ Add item', and a one-line note field ('Note for morning...').
+  > - 'Save and hand over' writes a document to 'closingCounts' with the person, date and time, counts and note. Show 'Saved'.
+  > - A link 'Since last night' opens D2.
+  > Since last night (D2):
+  > - Show the most recent closing count: who made it, when, and its note.
+  > - The next person types the current count for each item. The app shows the difference per item (current minus last night's), with a minus sign when stock is missing and 'same' when equal.
+  > - 'OK, seen' writes a document to 'morningChecks' (who, when, differences) and returns to Today.
+  > - If no closing count exists yet, show 'No closing count yet' and nothing else.
+- **What Worked:** Closing count properly records staff name, stock inventory levels, and handover note into `closingCounts`. "Since last night" (Screen D2) cleanly handles the empty state ("No closing count yet"), loads the latest shift handover note, computes live discrepancies (e.g. `-2 L` in red, `same` in neutral gray), and records morning acknowledgment to `morningChecks`.
+- **What Broke:** Difference calculation could show floating-point artifacts like `-0.1999999999999` if non-integer values were compared.
+- **How I Fixed It:** Passed diff values through `roundToHalf()` to ensure clean human-readable increments.
+- **Commit Message:** `Add closing count, handover note and since-last-night view`

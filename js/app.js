@@ -1,6 +1,6 @@
 // js/app.js
 // Main controller for Dhaba Prep Assistant MVP
-// Handles screen navigation, date formatting, End-of-day logging, Party orders, and Tomorrow's Prep Suggestions
+// Complete Implementation: Task 0 (Skeleton), Task 1 (EOD Log), Task 2 (Party Orders), Task 3 (Prep Suggestions), Task 4 (Closing Count & Handover)
 
 import { 
   initDefaultItems, 
@@ -13,7 +13,10 @@ import {
   getUpcomingPartyOrders,
   deletePartyOrder,
   savePrepPlan,
-  getPrepPlan
+  getPrepPlan,
+  saveClosingCount,
+  getLatestClosingCount,
+  saveMorningCheck
 } from "./db.js";
 
 import { calculatePrepSuggestion, roundToHalf } from "./suggestion.js";
@@ -61,8 +64,25 @@ const prepConfirmedBadge = document.getElementById("prep-confirmed-badge");
 const prepItemsList = document.getElementById("prep-items-list");
 const prepConfirmBtn = document.getElementById("prep-confirm-btn");
 
+// Closing count screen elements
+const closingNameInput = document.getElementById("closing-name");
+const closingStockItems = document.getElementById("closing-stock-items");
+const closingNoteInput = document.getElementById("closing-note");
+const closingSaveBtn = document.getElementById("closing-save-btn");
+const openSinceLastNightBtn = document.getElementById("open-since-last-night-btn");
+const closingShowAddBtn = document.getElementById("closing-show-add-btn");
+const closingAddForm = document.getElementById("closing-add-form");
+const newStockName = document.getElementById("new-stock-name");
+const newStockUnit = document.getElementById("new-stock-unit");
+const newStockSaveBtn = document.getElementById("new-stock-save-btn");
+const newStockCancelBtn = document.getElementById("new-stock-cancel-btn");
+
+// Since last night screen elements
+const sinceLastNightContent = document.getElementById("since-last-night-content");
+
 let cachedPrepItems = [];
-let currentPrepState = []; // Holds items for tomorrow's prep
+let cachedStockItems = [];
+let currentPrepState = [];
 
 /**
  * Format a Date object into human-readable label: "Today - Sat 7 Nov"
@@ -74,6 +94,22 @@ export function formatTodayHeader(d = new Date()) {
   const monthName = months[d.getMonth()];
   const dateNum = d.getDate();
   return `Today - ${dayName} ${dateNum} ${monthName}`;
+}
+
+/**
+ * Format timestamp into readable string (e.g., "Mon 10:30 pm")
+ */
+export function formatTimestamp(isoStr) {
+  if (!isoStr) return "";
+  const d = new Date(isoStr);
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const dayName = days[d.getDay()];
+  let hours = d.getHours();
+  const mins = String(d.getMinutes()).padStart(2, "0");
+  const ampm = hours >= 12 ? "pm" : "am";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  return `${dayName} ${hours}:${mins} ${ampm}`;
 }
 
 /**
@@ -536,16 +572,10 @@ async function loadPrepScreen() {
   const headingText = `Prep for ${days[tomorrow.getDay()]} ${tomorrow.getDate()} ${months[tomorrow.getMonth()]}`;
   prepDateHeading.textContent = headingText;
 
-  // 1. Fetch prep items
   cachedPrepItems = await getItems("prep");
-
-  // 2. Fetch past 7 days logs prior to tomorrow
   const recentLogs = await getRecentDayLogs(tomorrowStr, 7);
-
-  // 3. Fetch party orders scheduled for tomorrow
   const tomorrowPartyOrders = (await getUpcomingPartyOrders(tomorrowStr)).filter(o => o.date === tomorrowStr);
 
-  // 4. Fetch existing confirmed prep plan if already saved
   const existingPlan = await getPrepPlan(tomorrowStr);
   const existingLinesMap = {};
   if (existingPlan && existingPlan.lines) {
@@ -565,11 +595,9 @@ async function loadPrepScreen() {
     return;
   }
 
-  // Build recommendation per item
   cachedPrepItems.forEach(item => {
     const { suggested, logCount, note } = calculatePrepSuggestion(item.name, recentLogs);
 
-    // Sum up party extras for this item tomorrow
     let partyExtra = 0;
     const partyDescriptions = [];
     tomorrowPartyOrders.forEach(order => {
@@ -584,7 +612,6 @@ async function loadPrepScreen() {
       }
     });
 
-    // Check if user previously confirmed/adjusted a value
     const existing = existingLinesMap[item.name.toLowerCase()];
     let adjusted = existing !== undefined ? existing.adjusted : suggested;
     adjusted = roundToHalf(adjusted);
@@ -603,7 +630,6 @@ async function loadPrepScreen() {
     };
     currentPrepState.push(itemState);
 
-    // Render Card
     const card = document.createElement("div");
     card.className = "prep-item-card";
     card.dataset.itemName = item.name;
@@ -635,7 +661,6 @@ async function loadPrepScreen() {
       </div>
     `;
 
-    // Stepper event listeners
     const minusBtn = card.querySelector(".btn-minus");
     const plusBtn = card.querySelector(".btn-plus");
     const adjustedValEl = card.querySelector(".adjusted-val");
@@ -699,6 +724,200 @@ async function handleConfirmPrepList() {
   }
 }
 
+// -----------------------------------------------------------------------------
+// Task 4: Closing Count & Handover (Screen D) & Since Last Night (Screen D2)
+// -----------------------------------------------------------------------------
+
+async function loadClosingScreen() {
+  closingNameInput.value = "";
+  closingNoteInput.value = "";
+
+  cachedStockItems = await getItems("stock");
+  closingStockItems.innerHTML = "";
+
+  if (cachedStockItems.length === 0) {
+    closingStockItems.innerHTML = `<div class="empty-notice">No stock items found. Tap '+ Add item' below.</div>`;
+    return;
+  }
+
+  cachedStockItems.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "stock-item-row";
+    row.dataset.itemId = item.id;
+    row.dataset.itemName = item.name;
+    row.dataset.itemUnit = item.unit;
+
+    row.innerHTML = `
+      <span class="stock-item-name">${item.name}</span>
+      <div class="stock-input-wrapper">
+        <input type="number" 
+               step="any" 
+               min="0" 
+               inputmode="decimal" 
+               class="stock-input-qty" 
+               placeholder="0">
+        <span class="stock-unit-label">${item.unit}</span>
+      </div>
+    `;
+
+    closingStockItems.appendChild(row);
+  });
+}
+
+async function handleSaveClosingCount() {
+  const person = closingNameInput.value.trim();
+  const note = closingNoteInput.value.trim();
+  const todayStr = toDateStr(new Date());
+
+  if (!person) {
+    alert("Please enter your name for handover.");
+    closingNameInput.focus();
+    return;
+  }
+
+  const counts = [];
+  const rows = closingStockItems.querySelectorAll(".stock-item-row");
+  rows.forEach(r => {
+    const itemId = r.dataset.itemId;
+    const name = r.dataset.itemName;
+    const unit = r.dataset.itemUnit;
+    const qty = parseFloat(r.querySelector(".stock-input-qty").value) || 0;
+
+    counts.push({ itemId, name, unit, qty });
+  });
+
+  try {
+    closingSaveBtn.disabled = true;
+    closingSaveBtn.textContent = "Saving...";
+
+    await saveClosingCount(person, todayStr, counts, note);
+    showToast("Saved");
+    setTimeout(() => {
+      showScreen("today", "Today");
+    }, 400);
+  } catch (err) {
+    console.error("Error saving closing count:", err);
+    showToast("Error saving closing count");
+  } finally {
+    closingSaveBtn.disabled = false;
+    closingSaveBtn.textContent = "Save and hand over";
+  }
+}
+
+async function loadSinceLastNightScreen() {
+  const latestCount = await getLatestClosingCount();
+
+  if (!latestCount) {
+    sinceLastNightContent.innerHTML = `
+      <div class="empty-notice" style="font-size: 18px; padding-top: 48px;">
+        No closing count yet
+      </div>
+    `;
+    return;
+  }
+
+  const formattedTime = formatTimestamp(latestCount.savedAt);
+  const countPerson = latestCount.person;
+  const countNote = latestCount.note ? latestCount.note : "All standard";
+
+  let itemsRowsHtml = (latestCount.counts || []).map((it, idx) => {
+    return `
+      <div class="diff-row" data-name="${it.name}" data-unit="${it.unit}" data-last-qty="${it.qty}">
+        <span class="diff-label">${it.name} (${it.unit})</span>
+        <div class="diff-inputs">
+          <input type="number" 
+                 step="any" 
+                 min="0" 
+                 inputmode="decimal" 
+                 class="current-stock-input" 
+                 placeholder="${it.qty}">
+          <span class="diff-badge diff-same" id="diff-badge-${idx}">same</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  sinceLastNightContent.innerHTML = `
+    <div class="handover-card">
+      <div class="handover-meta">Last count: ${formattedTime}, ${countPerson}</div>
+      <div class="handover-note">Note: ${countPerson} - ${countNote}</div>
+    </div>
+
+    <p style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Enter today's count, then:</p>
+
+    <div style="background: white; border-radius: 8px; border: 1.5px solid var(--border-color); margin-bottom: 16px;">
+      ${itemsRowsHtml}
+    </div>
+
+    <div class="form-group">
+      <label for="checker-name">Checked By:</label>
+      <input type="text" id="checker-name" placeholder="Your name">
+    </div>
+
+    <button type="button" id="morning-seen-btn" class="btn-primary" style="margin-top: 8px;">
+      OK, seen
+    </button>
+  `;
+
+  // Attach live diff listeners
+  const diffRows = sinceLastNightContent.querySelectorAll(".diff-row");
+  diffRows.forEach((row, idx) => {
+    const lastQty = parseFloat(row.dataset.lastQty) || 0;
+    const input = row.querySelector(".current-stock-input");
+    const badge = row.querySelector(".diff-badge");
+    const unit = row.dataset.unit;
+
+    input.addEventListener("input", () => {
+      const rawVal = input.value;
+      if (rawVal === "") {
+        badge.textContent = "same";
+        badge.className = "diff-badge diff-same";
+        return;
+      }
+      const curVal = parseFloat(rawVal) || 0;
+      const diff = roundToHalf(curVal - lastQty);
+
+      if (diff < 0) {
+        badge.textContent = `${diff} ${unit}`;
+        badge.className = "diff-badge diff-negative";
+      } else if (diff === 0) {
+        badge.textContent = "same";
+        badge.className = "diff-badge diff-same";
+      } else {
+        badge.textContent = `+${diff} ${unit}`;
+        badge.className = "diff-badge diff-positive";
+      }
+    });
+  });
+
+  // Morning seen button listener
+  document.getElementById("morning-seen-btn")?.addEventListener("click", async () => {
+    const checker = document.getElementById("checker-name")?.value.trim() || "Staff";
+    const differences = [];
+
+    diffRows.forEach(row => {
+      const name = row.dataset.name;
+      const unit = row.dataset.unit;
+      const lastQty = parseFloat(row.dataset.lastQty) || 0;
+      const input = row.querySelector(".current-stock-input");
+      const curVal = input.value !== "" ? parseFloat(input.value) || 0 : lastQty;
+      const diff = roundToHalf(curVal - lastQty);
+      differences.push({ name, unit, diff });
+    });
+
+    try {
+      await saveMorningCheck(checker, latestCount.id, differences);
+      showToast("Handover verified");
+      setTimeout(() => {
+        showScreen("today", "Today");
+      }, 400);
+    } catch (err) {
+      console.error("Error saving morning check:", err);
+      showToast("Error saving verification");
+    }
+  });
+}
+
 // Setup Event Listeners
 function setupEventListeners() {
   // Navigation buttons from Home
@@ -714,6 +933,7 @@ function setupEventListeners() {
 
   document.getElementById("nav-closing")?.addEventListener("click", () => {
     showScreen("closing", "Closing stock count");
+    loadClosingScreen();
   });
 
   document.getElementById("nav-party")?.addEventListener("click", () => {
@@ -774,6 +994,45 @@ function setupEventListeners() {
 
   // Tomorrow's prep confirm listener
   prepConfirmBtn?.addEventListener("click", handleConfirmPrepList);
+
+  // Closing count listeners
+  openSinceLastNightBtn?.addEventListener("click", () => {
+    showScreen("sinceLastNight", "Since last night");
+    loadSinceLastNightScreen();
+  });
+
+  closingShowAddBtn?.addEventListener("click", () => {
+    closingAddForm.classList.remove("hidden");
+    closingShowAddBtn.classList.add("hidden");
+    newStockName.focus();
+  });
+
+  newStockCancelBtn?.addEventListener("click", () => {
+    closingAddForm.classList.add("hidden");
+    closingShowAddBtn.classList.remove("hidden");
+    newStockName.value = "";
+  });
+
+  newStockSaveBtn?.addEventListener("click", async () => {
+    const name = newStockName.value.trim();
+    const unit = newStockUnit.value.trim() || "kg";
+    if (!name) {
+      alert("Please enter a stock item name.");
+      return;
+    }
+    try {
+      await addItem(name, unit, "stock");
+      newStockName.value = "";
+      closingAddForm.classList.add("hidden");
+      closingShowAddBtn.classList.remove("hidden");
+      await loadClosingScreen();
+      showToast(`Added ${name}`);
+    } catch (err) {
+      alert("Error adding item: " + err.message);
+    }
+  });
+
+  closingSaveBtn?.addEventListener("click", handleSaveClosingCount);
 }
 
 // App Initialization

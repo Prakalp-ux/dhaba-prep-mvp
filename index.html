@@ -108,19 +108,61 @@
         </button>
       </section>
 
-      <!-- Screen D: Closing count (Placeholder for Task 4) -->
+      <!-- Screen D: Closing count (Task 4, Must-have 3) -->
       <section id="screen-closing" class="screen hidden">
-        <div class="placeholder-card">
-          <h2>Closing stock count</h2>
-          <p>Shift handover count for critical ingredients.</p>
+        <div class="closing-header-link">
+          <button type="button" id="open-since-last-night-btn" class="btn-secondary" style="font-size: 14px; min-height: 40px;">
+            Since last night &rarr;
+          </button>
         </div>
+
+        <div class="form-group">
+          <label for="closing-name">Your Name:</label>
+          <input type="text" id="closing-name" placeholder="e.g. Ravi, Ustaad Ji" required>
+        </div>
+
+        <div class="form-group">
+          <label>Stock Items Count:</label>
+          <div id="closing-stock-items">
+            <!-- Dynamic stock items rendered here -->
+          </div>
+        </div>
+
+        <!-- Add stock item section -->
+        <div class="inline-add-box" style="margin-top: 4px;">
+          <button id="closing-show-add-btn" class="btn-secondary" style="font-size: 14px; min-height: 40px;">
+            + Add item
+          </button>
+          <div id="closing-add-form" class="hidden" style="margin-top: 10px;">
+            <div class="form-group">
+              <label for="new-stock-name">Stock Item Name:</label>
+              <input type="text" id="new-stock-name" placeholder="e.g. Butter, Oil, Chicken">
+            </div>
+            <div class="form-group">
+              <label for="new-stock-unit">Unit:</label>
+              <input type="text" id="new-stock-unit" placeholder="e.g. kg, L, tins, pcs" value="kg">
+            </div>
+            <div class="inline-add-row">
+              <button id="new-stock-save-btn" class="btn-primary" style="flex: 1; min-height: 40px; font-size: 14px;">Add</button>
+              <button id="new-stock-cancel-btn" class="btn-secondary" style="flex: 1; min-height: 40px; font-size: 14px;">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 10px;">
+          <label for="closing-note">Note for morning:</label>
+          <input type="text" id="closing-note" placeholder="e.g. gas low, freezer 2 door loose">
+        </div>
+
+        <button id="closing-save-btn" class="btn-primary" style="margin-top: 12px;">
+          Save and hand over
+        </button>
       </section>
 
-      <!-- Screen D2: Since last night (Placeholder for Task 4) -->
+      <!-- Screen D2: Since last night (Task 4, Must-have 3) -->
       <section id="screen-since-last-night" class="screen hidden">
-        <div class="placeholder-card">
-          <h2>Since last night</h2>
-          <p>Discrepancy and morning check verification.</p>
+        <div id="since-last-night-content">
+          <!-- Populated dynamically or shows 'No closing count yet' -->
         </div>
       </section>
 

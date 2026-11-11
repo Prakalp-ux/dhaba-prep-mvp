@@ -626,3 +626,117 @@ textarea:focus {
   border-top: 1px dashed #e2e8f0;
   padding-top: 6px;
 }
+
+/* Task 4: Closing Count & Since Last Night (Screens D & D2) */
+.closing-header-link {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.stock-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.stock-item-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-main);
+  flex: 1;
+}
+
+.stock-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 130px;
+}
+
+.stock-input-wrapper input {
+  text-align: center;
+  min-height: 42px;
+  padding: 6px;
+  font-weight: 700;
+}
+
+.stock-unit-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  width: 32px;
+}
+
+.handover-card {
+  background-color: #f1f5f9;
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.handover-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.handover-note {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.diff-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.diff-label {
+  font-weight: 700;
+  font-size: 15px;
+  flex: 1;
+}
+
+.diff-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diff-inputs input {
+  width: 80px;
+  min-height: 40px;
+  text-align: center;
+  font-weight: 700;
+  padding: 4px;
+}
+
+.diff-badge {
+  min-width: 64px;
+  text-align: right;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.diff-negative {
+  color: var(--danger);
+}
+
+.diff-same {
+  color: var(--text-muted);
+}
+
+.diff-positive {
+  color: var(--success);
+}
