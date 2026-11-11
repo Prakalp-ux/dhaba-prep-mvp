@@ -63,3 +63,19 @@
 - **What Broke:** If a user typed a negative value, simple browser alert was too intrusive for a phone screen.
 - **How I Fixed It:** Added inline red validation messages under the cards and blocked save until negative values are corrected. Added warning banner if `Left + Wasted > Made` while still allowing save.
 - **Commit Message:** `Add end-of-day log with made, left and wasted per item`
+
+---
+
+## Session 5: Task 2 - Party Order Entry & Upcoming List (Must-have 4)
+- **Date & Task:** 12 Nov - Task 2 Party Orders (Screen E)
+- **Prompt Used:**
+  > Build Task 2 only: Party orders (screen E). Do not touch other screens.
+  > - Form fields: Date of the party (date picker, default tomorrow), Head count (whole number), Items (each row = choose a prep item + quantity in its unit; '+ Add row'), Advance paid in Rs. (number, may be 0).
+  > - 'Save' writes a document to 'partyOrders' using the fields in Section 1.7 of the brief. Show 'Saved'.
+  > - Below the form, list upcoming party orders (today and later) sorted by date, each showing date, head count and items. Each has a small Delete button with a confirmation so mistakes can be fixed.
+  > - On the home screen, label the button with the count, like 'Party orders (2 upcoming)'.
+  > - Show the hint 'Adds to Tomorrow's prep' under Save. The prep screen is built in the next task.
+- **What Worked:** Party orders screen with dynamic item selector rows, unit auto-updates, advance payment input, upcoming sorted list, and deletion with user confirmation. The Home screen button dynamically displays the upcoming party order count badge.
+- **What Broke:** Initial form allowed submitting zero food item rows, which could create an empty demand record.
+- **How I Fixed It:** Added validation requiring at least one valid food item with positive quantity before saving.
+- **Commit Message:** `Add party order entry and upcoming list`

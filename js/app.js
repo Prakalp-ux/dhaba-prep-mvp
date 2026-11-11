@@ -1,6 +1,6 @@
 // js/app.js
 // Main controller for Dhaba Prep Assistant MVP
-// Handles screen navigation, date formatting, and End-of-day logging (Must-have 1)
+// Handles screen navigation, date formatting, End-of-day logging, and Party orders
 
 import { 
   initDefaultItems, 
@@ -8,7 +8,9 @@ import {
   addItem, 
   saveDayLog, 
   getDayLog, 
-  getUpcomingPartyOrders 
+  savePartyOrder,
+  getUpcomingPartyOrders,
+  deletePartyOrder
 } from "./db.js";
 
 // Screen state management
@@ -38,6 +40,15 @@ const newPrepUnit = document.getElementById("new-prep-unit");
 const newPrepSaveBtn = document.getElementById("new-prep-save-btn");
 const newPrepCancelBtn = document.getElementById("new-prep-cancel-btn");
 const eodSaveBtn = document.getElementById("eod-save-btn");
+
+// Party order screen elements
+const partyDateInput = document.getElementById("party-date");
+const partyHeadcountInput = document.getElementById("party-headcount");
+const partyItemsContainer = document.getElementById("party-items-container");
+const partyAddRowBtn = document.getElementById("party-add-row-btn");
+const partyAdvanceInput = document.getElementById("party-advance");
+const partySaveBtn = document.getElementById("party-save-btn");
+const partyUpcomingList = document.getElementById("party-upcoming-list");
 
 let cachedPrepItems = [];
 
@@ -113,6 +124,10 @@ export async function refreshPartyCountBadge() {
     if (navPartyBadge) {
       navPartyBadge.textContent = `${count} upcoming`;
     }
+    const homePartyLabel = document.getElementById("nav-party-label");
+    if (homePartyLabel) {
+      homePartyLabel.textContent = `Party orders (${count} upcoming)`;
+    }
   } catch (err) {
     console.warn("Could not load party orders badge count:", err);
   }
@@ -126,16 +141,13 @@ async function loadEodScreen(chosenDateStr = null) {
   const selectedDate = chosenDateStr || eodDateInput.value || toDateStr(new Date());
   eodDateInput.value = selectedDate;
 
-  // Clear previous warnings/errors
   eodWarning.classList.add("hidden");
   eodWarning.textContent = "";
   eodError.classList.add("hidden");
   eodError.textContent = "";
 
-  // 1. Fetch current prep items
   cachedPrepItems = await getItems("prep");
 
-  // 2. Fetch existing day log if one was saved for this date
   const existingLog = await getDayLog(selectedDate);
   const existingEntriesMap = {};
   if (existingLog && existingLog.entries) {
@@ -144,7 +156,6 @@ async function loadEodScreen(chosenDateStr = null) {
     });
   }
 
-  // 3. Render each item card
   eodItemsList.innerHTML = "";
 
   if (cachedPrepItems.length === 0) {
@@ -204,7 +215,6 @@ async function loadEodScreen(chosenDateStr = null) {
       <div class="item-inline-error field-error hidden"></div>
     `;
 
-    // Live validation for left+wasted > made
     const madeInput = card.querySelector(".input-made");
     const leftInput = card.querySelector(".input-left");
     const wastedInput = card.querySelector(".input-wasted");
@@ -310,7 +320,6 @@ async function handleEodSave() {
     eodSaveBtn.textContent = "Saving...";
     await saveDayLog(dateStr, entries);
     showToast("Saved");
-    // Return to Today screen after saving
     setTimeout(() => {
       showScreen("today", "Today");
       refreshPartyCountBadge();
@@ -321,6 +330,183 @@ async function handleEodSave() {
   } finally {
     eodSaveBtn.disabled = false;
     eodSaveBtn.textContent = "Save Log";
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Task 2: Party Orders (Screen E)
+// -----------------------------------------------------------------------------
+
+function createPartyItemRow(defaultItem = null) {
+  const row = document.createElement("div");
+  row.className = "party-item-row";
+
+  let optionsHtml = cachedPrepItems.map(item => {
+    const isSelected = defaultItem && defaultItem.name === item.name ? "selected" : "";
+    return `<option value="${item.name}" data-unit="${item.unit}" ${isSelected}>${item.name}</option>`;
+  }).join("");
+
+  const initialUnit = cachedPrepItems[0] ? cachedPrepItems[0].unit : "kg";
+
+  row.innerHTML = `
+    <select class="party-item-select" aria-label="Select Food Item">
+      ${optionsHtml}
+    </select>
+    <input type="number" 
+           step="any" 
+           min="0.1" 
+           inputmode="decimal" 
+           class="party-item-qty" 
+           placeholder="Qty" 
+           value="${defaultItem ? defaultItem.qty : ''}" 
+           required>
+    <span class="unit-tag">${defaultItem ? defaultItem.unit : initialUnit}</span>
+    <button type="button" class="remove-row-btn" title="Remove item">&times;</button>
+  `;
+
+  const selectEl = row.querySelector(".party-item-select");
+  const unitTag = row.querySelector(".unit-tag");
+  selectEl.addEventListener("change", () => {
+    const selectedOpt = selectEl.options[selectEl.selectedIndex];
+    unitTag.textContent = selectedOpt.dataset.unit || "kg";
+  });
+
+  const removeBtn = row.querySelector(".remove-row-btn");
+  removeBtn.addEventListener("click", () => {
+    const totalRows = partyItemsContainer.querySelectorAll(".party-item-row").length;
+    if (totalRows > 1) {
+      row.remove();
+    } else {
+      showToast("Order must have at least one item");
+    }
+  });
+
+  return row;
+}
+
+async function loadPartyScreen() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  partyDateInput.value = toDateStr(tomorrow);
+
+  partyHeadcountInput.value = "";
+  partyAdvanceInput.value = "";
+
+  cachedPrepItems = await getItems("prep");
+
+  partyItemsContainer.innerHTML = "";
+  partyItemsContainer.appendChild(createPartyItemRow());
+
+  await renderUpcomingParties();
+}
+
+async function renderUpcomingParties() {
+  const todayStr = toDateStr(new Date());
+  const orders = await getUpcomingPartyOrders(todayStr);
+
+  partyUpcomingList.innerHTML = "";
+
+  if (orders.length === 0) {
+    partyUpcomingList.innerHTML = `<div class="empty-notice">No upcoming party orders recorded.</div>`;
+    return;
+  }
+
+  orders.forEach(order => {
+    const card = document.createElement("div");
+    card.className = "party-card";
+
+    const itemsSummary = (order.items || [])
+      .map(it => `<strong>${it.name}:</strong> ${it.qty} ${it.unit}`)
+      .join(", ");
+
+    card.innerHTML = `
+      <div class="party-card-top">
+        <span class="party-card-date">${order.date}</span>
+        <span class="party-card-head">${order.headCount} guests</span>
+      </div>
+      <div class="party-card-items">
+        ${itemsSummary || "No items listed"}
+      </div>
+      <div class="party-card-bottom">
+        <span class="party-advance-tag">Advance: Rs. ${Number(order.advancePaid || 0).toLocaleString()}</span>
+        <button class="btn-delete-small" data-order-id="${order.id}">Delete</button>
+      </div>
+    `;
+
+    const delBtn = card.querySelector(".btn-delete-small");
+    delBtn.addEventListener("click", async () => {
+      if (confirm(`Delete party order for ${order.date} (${order.headCount} guests)?`)) {
+        await deletePartyOrder(order.id);
+        showToast("Order deleted");
+        await renderUpcomingParties();
+        await refreshPartyCountBadge();
+      }
+    });
+
+    partyUpcomingList.appendChild(card);
+  });
+}
+
+async function handlePartySave() {
+  const date = partyDateInput.value;
+  const headCount = parseInt(partyHeadcountInput.value, 10);
+  const advancePaid = parseFloat(partyAdvanceInput.value) || 0;
+
+  if (!date) {
+    alert("Please select a date for the party.");
+    return;
+  }
+
+  if (!headCount || headCount <= 0) {
+    alert("Please enter a valid head count (number of people).");
+    return;
+  }
+
+  const items = [];
+  const rows = partyItemsContainer.querySelectorAll(".party-item-row");
+  for (const r of rows) {
+    const select = r.querySelector(".party-item-select");
+    const qtyInput = r.querySelector(".party-item-qty");
+    const name = select.value;
+    const unit = select.options[select.selectedIndex]?.dataset.unit || "kg";
+    const qty = parseFloat(qtyInput.value);
+
+    if (qty && qty > 0) {
+      items.push({ name, unit, qty });
+    }
+  }
+
+  if (items.length === 0) {
+    alert("Please enter a quantity for at least one food item.");
+    return;
+  }
+
+  try {
+    partySaveBtn.disabled = true;
+    partySaveBtn.textContent = "Saving...";
+
+    await savePartyOrder({
+      date,
+      headCount,
+      items,
+      advancePaid
+    });
+
+    showToast("Saved");
+
+    partyHeadcountInput.value = "";
+    partyAdvanceInput.value = "";
+    partyItemsContainer.innerHTML = "";
+    partyItemsContainer.appendChild(createPartyItemRow());
+
+    await renderUpcomingParties();
+    await refreshPartyCountBadge();
+  } catch (err) {
+    console.error("Error saving party order:", err);
+    showToast("Error saving order. Try again.");
+  } finally {
+    partySaveBtn.disabled = false;
+    partySaveBtn.textContent = "Save Party Order";
   }
 }
 
@@ -342,6 +528,7 @@ function setupEventListeners() {
 
   document.getElementById("nav-party")?.addEventListener("click", () => {
     showScreen("party", "Party orders");
+    loadPartyScreen();
   });
 
   // Global Back button returns to Today
@@ -387,28 +574,29 @@ function setupEventListeners() {
   });
 
   eodSaveBtn?.addEventListener("click", handleEodSave);
+
+  // Party order screen listeners
+  partyAddRowBtn?.addEventListener("click", () => {
+    partyItemsContainer.appendChild(createPartyItemRow());
+  });
+
+  partySaveBtn?.addEventListener("click", handlePartySave);
 }
 
 // App Initialization
 async function initApp() {
-  // 1. Set Today's date header
   todayDateDisplay.textContent = formatTodayHeader(new Date());
-
-  // 2. Setup navigation and screen listeners
   setupEventListeners();
 
-  // 3. Initialize default items in database if empty
   try {
     await initDefaultItems();
   } catch (err) {
     console.error("Initialization error:", err);
   }
 
-  // 4. Update party badge count
   await refreshPartyCountBadge();
 }
 
-// Boot application when DOM is ready
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initApp);
 } else {
