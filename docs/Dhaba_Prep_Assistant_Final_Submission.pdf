@@ -1,0 +1,3055 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R
+/MediaBox [0 0 595.0 842.0]
+/Contents 4 0 R
+/Resources <<
+  /Font <<
+    /F1 13 0 R
+    /F2 14 0 R
+    /F3 15 0 R
+  >>
+>> >>
+endobj
+4 0 obj
+<< /Length 5038 >>
+stream
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 20 Tf
+50.0 787.0 Td
+(Dhaba Prep Assistant) Tj
+ET
+Q
+
+
+q
+0.3 0.3 0.3 rg
+BT
+/F3 11 Tf
+50.0 761.0 Td
+(Product Development Assignment Final Submission) Tj
+ET
+Q
+
+
+q
+0.96 0.97 0.98 rg
+50.0 686.0 495.0 50 re f
+0.76 0.25 0.05 RG
+3 w
+50.0 686.0 m 50.0 736.0 l S
+0.1 0.1 0.1 rg
+BT
+/F2 10 Tf
+62.0 717.0 Td
+(Executive One-Line Scope) Tj
+ET
+/F1 9 Tf
+62.0 703.0 Td
+(My MVP lets owners of small independent food businesses \(dhabas, cafes, small hotels\) do) Tj
+ET
+62.0 691.0 Td
+( a 3-minute daily log of what they made, left and wasted, plan tomorrow's prep, and coun) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 14 Tf
+50.0 671.0 Td
+(1. Project Submission Metadata) Tj
+ET
+0.76 0.25 0.05 RG
+1.5 w
+50.0 667.0 m 545.0 667.0 l S
+Q
+
+
+q
+0.9 0.93 0.96 rg
+50.0 627.0 495 20 re f
+0.7 0.75 0.8 RG
+0.5 w
+50.0 627.0 495 20 re S
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+56.0 633.0 Td
+(Submission Item) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+196.0 633.0 Td
+(Details / Reference Link) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 609.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 609.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 614.0 Td
+(Product Name) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+196.0 614.0 Td
+(Dhaba Prep Assistant MVP) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 591.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 591.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 596.0 Td
+(Target User) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+196.0 596.0 Td
+(Dhaba & Cafe Owners / Line Head Cooks \(Single) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 573.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 573.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 578.0 Td
+(Live Link to MVP) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+196.0 578.0 Td
+(https://dhaba-prep-mvp.web.app \(or local :808) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 555.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 555.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 560.0 Td
+(GitHub Repository) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+196.0 560.0 Td
+(https://github.com/Prakalp-ux/dhaba-prep-mvp.) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 537.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 537.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 542.0 Td
+(Git Commit Hygiene) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+196.0 542.0 Td
+(11 Incremental Feature Commits \(Strict Sequen) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 519.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 519.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 524.0 Td
+(Core Tech Stack) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+196.0 524.0 Td
+(Mobile-first Plain HTML5, CSS3, ES6 JS, Fireb) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 501.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 501.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 506.0 Td
+(2-Min Demo Video) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+196.0 506.0 Td
+(Recorded via Live Link / Localhost \(Script en) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 483.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 483.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 488.0 Td
+(Hallway Usability Test) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+196.0 488.0 Td
+(Completed with Quick-Service Cafe Operator \(N) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 14 Tf
+50.0 471.0 Td
+(2. Core User Journey) Tj
+ET
+0.76 0.25 0.05 RG
+1.5 w
+50.0 467.0 m 545.0 467.0 l S
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 447.0 Td
+(The target user is a busy dhaba owner or head cook with dusty or wet hands who needs high) Tj
+ET
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 433.0 Td
+(contrast, large buttons \(48px+\), and zero typing friction.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 415.0 Td
+(\225 1. End-of-Day Food Logging:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 401.0 Td
+(At closing \(under 3 mins\), enters Made, Left, and Wasted quantities for core prep items:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 388.0 Td
+(Dal, Paneer, Mixed veg, and Rice.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 371.0 Td
+(\225 2. Tomorrow's Prep Planning:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 357.0 Td
+(Next evening taps Tomorrow's prep to see data-driven cooking recommendations based on the) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 344.0 Td
+(7-day average plus a 10% safety buffer.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 327.0 Td
+(\225 3. Shift Handover & Morning Check:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 313.0 Td
+(Closing staff logs physical stock \(Milk, Paneer, Eggs, Bread\) with a note. Morning shift) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 300.0 Td
+(sees differences \(e.g. -2 L\) instantly.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 283.0 Td
+(\225 4. Party / Advance Demand:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 269.0 Td
+(Records booked catering orders \(head count, advance paid\) that automatically increase prep) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 256.0 Td
+(recommendations.) Tj
+ET
+Q
+
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 35 Td
+(Google Antigravity MVP Project) Tj
+ET
+BT
+/F1 9 Tf
+505 35 Td
+(Page 1) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 48 m 545 48 l S
+Q
+
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R
+/MediaBox [0 0 595.0 842.0]
+/Contents 6 0 R
+/Resources <<
+  /Font <<
+    /F1 13 0 R
+    /F2 14 0 R
+    /F3 15 0 R
+  >>
+>> >>
+endobj
+6 0 obj
+<< /Length 6921 >>
+stream
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 805 Td
+(Dhaba Prep Assistant - Product Development MVP Submission) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 798 m 545 798 l S
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 14 Tf
+50.0 787.0 Td
+(3. Feature Checklist \(MoSCoW Prioritization\)) Tj
+ET
+0.76 0.25 0.05 RG
+1.5 w
+50.0 783.0 m 545.0 783.0 l S
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 763.0 Td
+(Every single candidate feature was evaluated against user interview evidence. Only) Tj
+ET
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 749.0 Td
+(Must-haves were built; all others were cut to preserve MVP discipline.) Tj
+ET
+Q
+
+
+q
+0.9 0.93 0.96 rg
+50.0 711.0 495 20 re f
+0.7 0.75 0.8 RG
+0.5 w
+50.0 711.0 495 20 re S
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+56.0 717.0 Td
+(Feature Name) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+201.0 717.0 Td
+(MoSCoW) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+256.0 717.0 Td
+(Status) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+311.0 717.0 Td
+(Rationale) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 693.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 693.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 698.0 Td
+(End-of-day stock & waste log) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 698.0 Td
+(Must) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 698.0 Td
+(DONE) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 698.0 Td
+(Core spillage & inventory mismatch problem \(P) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 675.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 675.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 680.0 Td
+(Tomorrow's prep suggestion) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 680.0 Td
+(Must) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 680.0 Td
+(DONE) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 680.0 Td
+(Prevents blind over/under-cooking and 15-min ) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 657.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 657.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 662.0 Td
+(Closing count & handover note) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 662.0 Td
+(Must) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 662.0 Td
+(DONE) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 662.0 Td
+(Solves night-shift staff shrinkage and missin) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 639.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 639.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 644.0 Td
+(Party / advance order entry) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 644.0 Td
+(Must) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 644.0 Td
+(DONE) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 644.0 Td
+(Predictable demand feeds extra cooking volume) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 621.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 621.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 626.0 Td
+(Waste value in rupees) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 626.0 Td
+(Should) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 626.0 Td
+(CUT) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 626.0 Td
+(Needs pricing models and dish costing; adds m) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 603.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 603.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 608.0 Td
+(Recipe & staff training cards) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 608.0 Td
+(Should) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 608.0 Td
+(CUT) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 608.0 Td
+(Cooks know recipes; primary bottleneck is bat) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 585.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 585.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 590.0 Td
+(WhatsApp summary export) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 590.0 Td
+(Should) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 590.0 Td
+(CUT) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 590.0 Td
+(Excluded in Section 1.5 to maintain standalon) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 567.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 567.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 572.0 Td
+(Hindi / regional language UI) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 572.0 Td
+(Should) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 572.0 Td
+(CUT) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 572.0 Td
+(Universal icons and simple English words suff) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 549.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 549.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 554.0 Td
+(POS / token ordering) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 554.0 Td
+(Won't) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 554.0 Td
+(CUT) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 554.0 Td
+(Completely different product requiring paymen) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 531.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 531.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 536.0 Td
+(Staff theft CCTV AI) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+201.0 536.0 Td
+(Won't) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 536.0 Td
+(CUT) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+311.0 536.0 Td
+(Sensitive and expensive; physical count provi) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 14 Tf
+50.0 519.0 Td
+(4. The Suggestion Rule \(Mathematical Specification\)) Tj
+ET
+0.76 0.25 0.05 RG
+1.5 w
+50.0 515.0 m 545.0 515.0 l S
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 495.0 Td
+(The engine implements the exact mathematical rule defined in Section 1.8 of the product) Tj
+ET
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 481.0 Td
+(brief with zero invented heuristics:) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 463.0 Td
+(\225 Daily Consumption Formula:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 449.0 Td
+(For each item on day d: Sold = Made - Left - Wasted. \(Clamped to 0 if negative\).) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 432.0 Td
+(\225 Rolling Average:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 418.0 Td
+(Averages the Sold values across the most recent 7 available days \(prior to tomorrow\).) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 401.0 Td
+(\225 Safety Buffer & Rounding:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 387.0 Td
+(Suggested = Average * \(1 + BUFFER\) with BUFFER = 0.10, rounded to nearest 0.5 kg/L.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 370.0 Td
+(\225 Transparent Confidence Badges:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 356.0 Td
+(Displays 'Based on last 7 days' \(N>=7\), 'Based on N day\(s\) of logs' \(1<=N<=6\), or 'No logs) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 343.0 Td
+(yet - enter a quantity yourself' \(N=0\).) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 326.0 Td
+(\225 Party Extra Addition:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 312.0 Td
+(Sums quantities from partyOrders dated tomorrow: Total to cook = Adjusted + Party Extras.) Tj
+ET
+Q
+
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 35 Td
+(Google Antigravity MVP Project) Tj
+ET
+BT
+/F1 9 Tf
+505 35 Td
+(Page 2) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 48 m 545 48 l S
+Q
+
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R
+/MediaBox [0 0 595.0 842.0]
+/Contents 8 0 R
+/Resources <<
+  /Font <<
+    /F1 13 0 R
+    /F2 14 0 R
+    /F3 15 0 R
+  >>
+>> >>
+endobj
+8 0 obj
+<< /Length 5393 >>
+stream
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 805 Td
+(Dhaba Prep Assistant - Product Development MVP Submission) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 798 m 545 798 l S
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 14 Tf
+50.0 787.0 Td
+(5. Code Architecture & Plain-Language Notes) Tj
+ET
+0.76 0.25 0.05 RG
+1.5 w
+50.0 783.0 m 545.0 783.0 l S
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 763.0 Td
+(Prepared for assignment review and oral defense. Explains every file in plain language with) Tj
+ET
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 749.0 Td
+(zero technical jargon.) Tj
+ET
+Q
+
+
+q
+0.9 0.93 0.96 rg
+50.0 711.0 495 20 re f
+0.7 0.75 0.8 RG
+0.5 w
+50.0 711.0 495 20 re S
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+56.0 717.0 Td
+(File Name) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+161.0 717.0 Td
+(Role in App) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+276.0 717.0 Td
+(Key Functions) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+426.0 717.0 Td
+(What Breaks if Deleted) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 693.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 693.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 698.0 Td
+(index.html) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+161.0 698.0 Td
+(Single-Page UI Skeleton) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+276.0 698.0 Td
+(Holds screens A, B, C, D, D2, E) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+426.0 698.0 Td
+(No visual UI renders in browser) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 675.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 675.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 680.0 Td
+(css/styles.css) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+161.0 680.0 Td
+(Mobile-First Styling) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+276.0 680.0 Td
+(48px+ touch targets, dhaba palette) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+426.0 680.0 Td
+(Unstyled, unusable tiny links) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 657.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 657.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 662.0 Td
+(js/firebase-config.js) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+161.0 662.0 Td
+(Cloud DB Credentials) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+276.0 662.0 Td
+(firebaseConfig object, config check) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+426.0 662.0 Td
+(Database connection fails to init) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 639.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 639.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 644.0 Td
+(js/db.js) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+161.0 644.0 Td
+(Data Read/Write Layer) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+276.0 644.0 Td
+(saveDayLog, savePrepPlan, getLogs) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+426.0 644.0 Td
+(Zero persistence; app cannot save) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 621.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 621.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 626.0 Td
+(js/suggestion.js) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+161.0 626.0 Td
+(Mathematical Intelligence) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+276.0 626.0 Td
+(calculatePrepSuggestion, roundToHalf) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+426.0 626.0 Td
+(No prep suggestions; cooks guess blind) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 603.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 603.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 608.0 Td
+(js/app.js) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+161.0 608.0 Td
+(Screen & UI Controller) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+276.0 608.0 Td
+(showScreen, validateInputs, steppers) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+426.0 608.0 Td
+(Buttons dead; dynamic forms frozen) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 585.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 585.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 590.0 Td
+(firestore.rules) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+161.0 590.0 Td
+(Cloud Security Access) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+276.0 590.0 Td
+(Restricts read/write to 6 collections) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+426.0 590.0 Td
+(Database vulnerable or test-mode expires) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.2 rg
+BT
+/F2 11 Tf
+50.0 573.0 Td
+(Worked Numerical Example for Oral Defense) Tj
+ET
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 555.0 Td
+(Suppose Paneer sold over the last 3 days was: Monday 4.0 kg, Tuesday 4.5 kg, and Wednesday) Tj
+ET
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 541.0 Td
+(3.5 kg.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 523.0 Td
+(\225 Step 1: Calculate Average:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 509.0 Td
+(Sum = 4.0 + 4.5 + 3.5 = 12.0 kg. Average = 12.0 / 3 = 4.0 kg.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 492.0 Td
+(\225 Step 2: Apply 10% Safety Buffer:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 478.0 Td
+(4.0 kg * 1.10 = 4.4 kg.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 461.0 Td
+(\225 Step 3: Round to Nearest 0.5 kg:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 447.0 Td
+(4.4 kg rounds to 4.5 kg. Badge shows: 'Based on 3 day\(s\) of logs - not enough yet'.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 430.0 Td
+(\225 Step 4: Party Extra Demand:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 416.0 Td
+(If an upcoming party order booked 2.0 kg Paneer tomorrow, Total to cook = 4.5 + 2.0 = 6.5) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 403.0 Td
+(kg.) Tj
+ET
+Q
+
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 35 Td
+(Google Antigravity MVP Project) Tj
+ET
+BT
+/F1 9 Tf
+505 35 Td
+(Page 3) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 48 m 545 48 l S
+Q
+
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R
+/MediaBox [0 0 595.0 842.0]
+/Contents 10 0 R
+/Resources <<
+  /Font <<
+    /F1 13 0 R
+    /F2 14 0 R
+    /F3 15 0 R
+  >>
+>> >>
+endobj
+10 0 obj
+<< /Length 5969 >>
+stream
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 805 Td
+(Dhaba Prep Assistant - Product Development MVP Submission) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 798 m 545 798 l S
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 14 Tf
+50.0 787.0 Td
+(6. Comprehensive Build Log \(Git History & Fixes\)) Tj
+ET
+0.76 0.25 0.05 RG
+1.5 w
+50.0 783.0 m 545.0 783.0 l S
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 763.0 Td
+(Chronological log tracking each iterative prompt, what functioned on first run, what broke,) Tj
+ET
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 749.0 Td
+(and how it was resolved.) Tj
+ET
+Q
+
+
+q
+0.9 0.93 0.96 rg
+50.0 711.0 495 20 re f
+0.7 0.75 0.8 RG
+0.5 w
+50.0 711.0 495 20 re S
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+56.0 717.0 Td
+(Commit Hash) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+116.0 717.0 Td
+(Session & Task) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+231.0 717.0 Td
+(What Broke / Challenge) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+391.0 717.0 Td
+(Resolution Applied) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 693.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 693.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 698.0 Td
+(b4ce8d1) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 698.0 Td
+(Step 1: Git & Brief) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 698.0 Td
+(Out-of-scope files from previous draft) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 698.0 Td
+(Pruned wrong files; wrote authentic brief) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 675.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 675.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 680.0 Td
+(e083f09) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 680.0 Td
+(Step 2-3: Plan & Scope) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 680.0 Td
+(Potential feature creep \(rupee waste\)) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 680.0 Td
+(Enforced strict 5-task build order) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 657.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 657.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 662.0 Td
+(93eaf59) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 662.0 Td
+(Step 4: Task 0 Skeleton) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 662.0 Td
+(Firebase placeholder credentials error) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 662.0 Td
+(Created fallback adapter in js/db.js) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 639.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 639.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 644.0 Td
+(54bce36) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 644.0 Td
+(Step 6: Task 1 EOD Log) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 644.0 Td
+(Negative numbers typed on touch keypad) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 644.0 Td
+(Added inline red warnings blocking save) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 621.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 621.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 626.0 Td
+(322c787) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 626.0 Td
+(Step 7: Task 2 Party Orders) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 626.0 Td
+(Submitting empty food item lists) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 626.0 Td
+(Mandated at least 1 item with qty > 0) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 603.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 603.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 608.0 Td
+(ba1e60b) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 608.0 Td
+(Step 8: Seed Test Data) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 608.0 Td
+(Testing suggestions without 7 real days) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 608.0 Td
+(Created standalone unlinked seed.html) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 585.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 585.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 590.0 Td
+(3015191) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 590.0 Td
+(Step 9: Task 3 Prep Engine) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 590.0 Td
+(Stepper allowed decreasing below 0 kg) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 590.0 Td
+(Added min 0 bounds check on adjusted values) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 567.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 567.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 572.0 Td
+(f40b406) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 572.0 Td
+(Step 10: Task 4 Closing) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 572.0 Td
+(Floating-point discrepancies \(e.g. -0.1999\)) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 572.0 Td
+(Passed diffs through roundToHalf\(\)) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 549.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 549.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 554.0 Td
+(171f3b4) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 554.0 Td
+(Step 11: Phone Sweep) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 554.0 Td
+(Party select row cramped on 360px width) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 554.0 Td
+(Adjusted flex ratio \(flex 2 on dropdown\)) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 531.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 531.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 536.0 Td
+(ee49942) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 536.0 Td
+(Step 12: Code Notes) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 536.0 Td
+(Database terminology too academic) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 536.0 Td
+(Rephrased into kitchen shift analogies) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 513.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 513.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 518.0 Td
+(280188b) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+116.0 518.0 Td
+(Step 16: Hallway Test Fix) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+231.0 518.0 Td
+(Tester confused if stepper was base or total) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+391.0 518.0 Td
+(Added 'Base Prep Target' & 'Total to cook') Tj
+ET
+Q
+
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 35 Td
+(Google Antigravity MVP Project) Tj
+ET
+BT
+/F1 9 Tf
+505 35 Td
+(Page 4) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 48 m 545 48 l S
+Q
+
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R
+/MediaBox [0 0 595.0 842.0]
+/Contents 12 0 R
+/Resources <<
+  /Font <<
+    /F1 13 0 R
+    /F2 14 0 R
+    /F3 15 0 R
+  >>
+>> >>
+endobj
+12 0 obj
+<< /Length 4559 >>
+stream
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 805 Td
+(Dhaba Prep Assistant - Product Development MVP Submission) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 798 m 545 798 l S
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 14 Tf
+50.0 787.0 Td
+(7. Hallway Usability Test & Iteration) Tj
+ET
+0.76 0.25 0.05 RG
+1.5 w
+50.0 783.0 m 545.0 783.0 l S
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 763.0 Td
+(Tested on an Android smartphone with Rohan, a cafe operator who had never seen the app) Tj
+ET
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 749.0 Td
+(before.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 731.0 Td
+(\225 Instruction Given:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 717.0 Td
+('You run a small cafe. Log today's food and see tomorrow's prep.' \(Observer stayed silent\).) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 700.0 Td
+(\225 Observed Hesitation:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 686.0 Td
+(Tester smoothly logged daily food but hesitated at Tomorrow's prep: 'Does 4.5 kg mean total) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 673.0 Td
+(food for tomorrow or what I need to cook extra?') Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 656.0 Td
+(\225 Smallest Change Implemented:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 642.0 Td
+(Added sub-header 'Base Prep Target' above steppers and re-labeled bottom line to 'Total to) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 629.0 Td
+(cook tomorrow:'.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 10 Tf
+50.0 612.0 Td
+(\225 Retest Outcome:) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 598.0 Td
+(Tester immediately understood the distinction and completed the end-to-end task in under 2) Tj
+ET
+Q
+
+
+q
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+50.0 585.0 Td
+(minutes.) Tj
+ET
+Q
+
+
+q
+0.76 0.25 0.05 rg
+BT
+/F2 14 Tf
+50.0 568.0 Td
+(8. 2-Minute Screen-Recorded Demo Script) Tj
+ET
+0.76 0.25 0.05 RG
+1.5 w
+50.0 564.0 m 545.0 564.0 l S
+Q
+
+
+q
+0.1 0.1 0.1 rg
+BT
+/F1 10 Tf
+50.0 544.0 Td
+(Follow this second-by-second timeline when recording your screen demo:) Tj
+ET
+Q
+
+
+q
+0.9 0.93 0.96 rg
+50.0 506.0 495 20 re f
+0.7 0.75 0.8 RG
+0.5 w
+50.0 506.0 495 20 re S
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+56.0 512.0 Td
+(Time Window) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+126.0 512.0 Td
+(On-Screen Action) Tj
+ET
+Q
+
+
+q
+0.1 0.15 0.25 rg
+BT
+/F2 9 Tf
+256.0 512.0 Td
+(Word-for-Word Voiceover Script) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 488.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 488.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 493.0 Td
+(0:00 - 0:10) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+126.0 493.0 Td
+(Today screen on phone) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 493.0 Td
+('This is Dhaba Prep Assistant. It solves one ) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 470.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 470.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 475.0 Td
+(0:10 - 0:40) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+126.0 475.0 Td
+(Tap End-of-day log) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 475.0 Td
+('At closing, the cook enters Made, Left, and ) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 452.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 452.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 457.0 Td
+(0:40 - 1:05) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+126.0 457.0 Td
+(Tap Party orders) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 457.0 Td
+('If a party of 20 is booked for tomorrow, the) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 434.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 434.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 439.0 Td
+(1:05 - 1:35) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+126.0 439.0 Td
+(Tap Tomorrow's prep) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 439.0 Td
+('The app calculates prep using a 7-day averag) Tj
+ET
+Q
+
+
+q
+1.0 1.0 1.0 rg
+50.0 416.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 416.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 421.0 Td
+(1:35 - 1:55) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+126.0 421.0 Td
+(Closing count & Handover) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 421.0 Td
+('Closing staff counts stock and leaves a note) Tj
+ET
+Q
+
+
+q
+0.98 0.99 1.0 rg
+50.0 398.0 495 18 re f
+0.8 0.85 0.9 RG
+0.5 w
+50.0 398.0 495 18 re S
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+56.0 403.0 Td
+(1:55 - 2:00) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+126.0 403.0 Td
+(Live link in browser bar) Tj
+ET
+Q
+
+
+q
+0.15 0.15 0.15 rg
+BT
+/F1 8.5 Tf
+256.0 403.0 Td
+('This is completely live, mobile-first, and w) Tj
+ET
+Q
+
+
+q
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+50 35 Td
+(Google Antigravity MVP Project) Tj
+ET
+BT
+/F1 9 Tf
+505 35 Td
+(Page 5) Tj
+ET
+0.8 0.8 0.8 RG
+0.5 w
+50 48 m 545 48 l S
+Q
+
+endstream
+endobj
+13 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+14 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+15 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000140 00000 n 
+0000000309 00000 n 
+0000005399 00000 n 
+0000005568 00000 n 
+0000012541 00000 n 
+0000012710 00000 n 
+0000018155 00000 n 
+0000018325 00000 n 
+0000024347 00000 n 
+0000024518 00000 n 
+0000029130 00000 n 
+0000029201 00000 n 
+0000029277 00000 n 
+trailer
+<< /Size 16 /Root 1 0 R >>
+startxref
+29356
+%%EOF

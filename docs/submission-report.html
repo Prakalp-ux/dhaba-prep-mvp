@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dhaba Prep Assistant - Final Assignment Submission Report</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    
+    :root {
+      --primary: #c2410c;
+      --text: #0f172a;
+      --muted: #475569;
+      --bg: #ffffff;
+      --card-bg: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: #f1f5f9;
+      margin: 0;
+      padding: 30px 15px;
+    }
+
+    .report-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 48px;
+    }
+
+    .header-tag {
+      display: inline-block;
+      background: #ffedd5;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .callout {
+      background: #fffaf5;
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 32px;
+    }
+
+    .callout h3 {
+      margin: 0 0 6px 0;
+      font-size: 16px;
+      color: var(--primary);
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 800;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 8px;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    tr:nth-child(even) { background: #f8fafc; }
+
+    .badge-done {
+      background: #dcfce7;
+      color: #15803d;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .badge-cut {
+      background: #fee2e2;
+      color: #b91c1c;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .bullet-title {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .report-container { box-shadow: none; padding: 20px; max-width: 100%; }
+      .no-print { display: none; }
+      h2 { page-break-before: auto; }
+      table { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-container">
+  <div class="no-print" style="margin-bottom: 20px; text-align: right;">
+    <button onclick="window.print()" style="background: #c2410c; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer;">
+      🖨️ Print / Save as PDF
+    </button>
+  </div>
+
+  <span class="header-tag">Product Development MVP Submission</span>
+  <h1>Dhaba Prep Assistant</h1>
+  <p class="subtitle">Google Antigravity AI-Assisted Product Build & Implementation Report</p>
+
+  <div class="callout">
+    <h3>Executive One-Line Scope</h3>
+    <p>My MVP lets owners of small independent food businesses (dhabas, cafes, small hotels) do a 3-minute daily log of what they made, what is left and what was wasted, plan tomorrow's prep from it, and count closing stock at shift change, so that they cook closer to real demand and notice missing stock at handover instead of absorbing the loss.</p>
+  </div>
+
+  <h2>1. Submission Checklist & Deliverables</h2>
+  <table>
+    <tr><th>Item</th><th>Status</th><th>Location / Link</th></tr>
+    <tr><td>Live Link to MVP</td><td><span class="badge-done">Ready</span></td><td><code>https://dhaba-prep-mvp.web.app</code> (or local :8080)</td></tr>
+    <tr><td>GitHub Repository</td><td><span class="badge-done">Ready</span></td><td><a href="https://github.com/Prakalp-ux/dhaba-prep-mvp.git">https://github.com/Prakalp-ux/dhaba-prep-mvp.git</a></td></tr>
+    <tr><td>Regular Git Commits</td><td><span class="badge-done">11 Commits</span></td><td>Strict incremental 1-commit-per-feature progression</td></tr>
+    <tr><td>Product Brief & Plan</td><td><span class="badge-done">Included</span></td><td><code>docs/product-brief.md</code>, <code>docs/implementation-plan.md</code></td></tr>
+    <tr><td>Build Log (Prompts & Fixes)</td><td><span class="badge-done">Included</span></td><td><code>docs/build-log.md</code> (All 12 sessions logged)</td></tr>
+    <tr><td>Feature MoSCoW Checklist</td><td><span class="badge-done">Included</span></td><td><code>docs/feature-checklist.md</code></td></tr>
+    <tr><td>Hallway Usability Test</td><td><span class="badge-done">Completed</span></td><td><code>docs/hallway-test.md</code> (Tested with cafe operator)</td></tr>
+    <tr><td>2-Minute Demo Script</td><td><span class="badge-done">Included</span></td><td>Word-for-word timed script in Section 7</td></tr>
+  </table>
+
+  <h2>2. Feature List (MoSCoW Prioritization)</h2>
+  <table>
+    <tr><th>Feature</th><th>MoSCoW</th><th>Status</th><th>Evidence & Rationale</th></tr>
+    <tr><td>End-of-day stock and waste log</td><td>Must</td><td><span class="badge-done">DONE</span></td><td>Core spoilage & inventory mismatch problem (P1, P2, P4)</td></tr>
+    <tr><td>Tomorrow's prep suggestion</td><td>Must</td><td><span class="badge-done">DONE</span></td><td>Prevents blind prep & 15-min customer rush delays (P4, P3)</td></tr>
+    <tr><td>Closing stock count with handover note</td><td>Must</td><td><span class="badge-done">DONE</span></td><td>Stops night-shift shrinkage & missing stock confusion (P5, P1)</td></tr>
+    <tr><td>Party / advance order entry</td><td>Must</td><td><span class="badge-done">DONE</span></td><td>Large bookings directly drive bulk prep adjustments (P5, P2)</td></tr>
+    <tr><td>Waste value in rupees</td><td>Should</td><td><span class="badge-cut">CUT</span></td><td>Needs pricing database & dish costing; adds math friction</td></tr>
+    <tr><td>Recipe & staff training cards</td><td>Should</td><td><span class="badge-cut">CUT</span></td><td>Cooks know recipes; bottleneck is batch volume</td></tr>
+    <tr><td>WhatsApp summary export</td><td>Should</td><td><span class="badge-cut">CUT</span></td><td>Cut to keep web app lightweight and offline-first</td></tr>
+    <tr><td>Hindi / regional language interface</td><td>Should</td><td><span class="badge-cut">CUT</span></td><td>Universal numbers & icons sufficient for v1 trial</td></tr>
+    <tr><td>POS & token ordering</td><td>Won't</td><td><span class="badge-cut">CUT</span></td><td>Different product category requiring hardware & payments</td></tr>
+    <tr><td>Staff theft CCTV AI</td><td>Won't</td><td><span class="badge-cut">CUT</span></td><td>Expensive & sensitive; physical count provides accountability</td></tr>
+  </table>
+
+  <h2>3. Mathematical Suggestion Engine</h2>
+  <div class="formula-box">
+    <strong>Exact Formula from Section 1.8:</strong><br>
+    1. Daily Sold = Made - Left - Wasted (min 0)<br>
+    2. Average Sold = Sum(Sold of up to 7 recent days) / N<br>
+    3. Suggested = Average Sold &times; (1 + 0.10 BUFFER), rounded to nearest 0.5 kg/L<br>
+    4. Total to cook = Adjusted + Party Extras
+  </div>
+
+  <h2>4. Plain-Language Code Explanations (Oral Review Notes)</h2>
+  <ul>
+    <li><span class="bullet-title">index.html:</span> Holds the 5 visual screens (Today, EOD Log, Prep, Closing, Party Orders) and floating toast confirmation.</li>
+    <li><span class="bullet-title">css/styles.css:</span> Enforces 48px+ touch targets for oily/wet kitchen fingers and single terracotta dhaba palette.</li>
+    <li><span class="bullet-title">js/firebase-config.js:</span> Connection parameters for Google Cloud Firestore.</li>
+    <li><span class="bullet-title">js/db.js:</span> Centralized storage layer with automatic offline fallback adapter and Firestore cloud reads/writes.</li>
+    <li><span class="bullet-title">js/suggestion.js:</span> Implements the 10% safety buffer and 0.5 kg rounding algorithm.</li>
+    <li><span class="bullet-title">js/app.js:</span> Controls touch navigation, form validation (blocks negative numbers), and stepper buttons.</li>
+    <li><span class="bullet-title">firestore.rules:</span> Cloud security rules locking Firestore access strictly to the 6 application collections.</li>
+  </ul>
+
+  <h2>5. 2-Minute Screen Demo Script</h2>
+  <table>
+    <tr><th>Time</th><th>Screen</th><th>Word-for-Word Voiceover Script</th></tr>
+    <tr><td>0:00 - 0:10</td><td>Today (Phone)</td><td>"This is Dhaba Prep Assistant. It solves one big problem: dhaba owners cook blind, leading to food waste or rush-hour stockouts."</td></tr>
+    <tr><td>0:10 - 0:40</td><td>End-of-day Log</td><td>"At closing, the cook enters Made, Left, and Wasted for Dal, Paneer, Veg, and Rice. Validation prevents mistakes. It saves in seconds."</td></tr>
+    <tr><td>0:40 - 1:05</td><td>Party Orders</td><td>"When a group of 20 books for tomorrow, we log it here with advance paid. It automatically feeds extra prep into tomorrow's list."</td></tr>
+    <tr><td>1:05 - 1:35</td><td>Tomorrow's Prep</td><td>"The app averages past days and adds a 10% safety buffer. We adjust with plus and minus, and the party extra is added on top."</td></tr>
+    <tr><td>1:35 - 1:55</td><td>Closing Count & Handover</td><td>"Closing staff counts stock and leaves a note. Morning staff opens Since last night, counts stock, and sees differences in red."</td></tr>
+    <tr><td>1:55 - 2:00</td><td>Live URL</td><td>"This is completely live, mobile-first, and runs on any smartphone browser."</td></tr>
+  </table>
+</div>
+
+</body>
+</html>
