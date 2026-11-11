@@ -145,3 +145,20 @@
 - **What Broke:** On 360px viewport, party item selection row cramped when item names were long.
 - **How I Fixed It:** Adjusted `.party-item-row` flex proportions to `flex: 2` for select and `flex: 1` for quantity input, preventing text truncation. Verified empty states show plain readable English instead of `NaN` or blank elements.
 - **Commit Message:** `Fix layout and empty-state bugs found in phone test`
+
+---
+
+## Session 10: Step 12 - Code Architecture & Review Preparation
+- **Date & Task:** 12 Nov - Plain Language Code Explanation & Worked Examples
+- **Prompt Used:**
+  > Do not change any code. Explain every file in this project in plain language, as if to someone who has never coded.
+  > For each file give: what it does in one sentence, its 2 or 3 most important functions, and what would break if I deleted it.
+  > Then explain, with a worked example using real numbers:
+  > 1. how the prep suggestion is calculated, step by step
+  > 2. where the data is stored and how the app reads and writes it
+  > 3. what happens when there are fewer than 7 days of logs
+  > 4. how the Since last night difference is calculated
+- **What Worked:** Created comprehensive plain-language reference in `docs/code-notes.md` detailing every file, data flow, the exact mathematical suggestion calculation ($4.0 \times 1.10 = 4.4 \implies 4.5\text{ kg}$), and morning handover calculations.
+- **What Broke:** Initial explanation used technical database terms like "NoSQL JSON document collections" which could be hard to explain to an examiner.
+- **How I Fixed It:** Rephrased using relatable restaurant analogies (folders in a filing cabinet, morning handover clipboard) while retaining technical accuracy.
+- **Commit Message:** `Add my own notes on how the code works`
