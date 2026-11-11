@@ -162,3 +162,31 @@
 - **What Broke:** Initial explanation used technical database terms like "NoSQL JSON document collections" which could be hard to explain to an examiner.
 - **How I Fixed It:** Rephrased using relatable restaurant analogies (folders in a filing cabinet, morning handover clipboard) while retaining technical accuracy.
 - **Commit Message:** `Add my own notes on how the code works`
+
+---
+
+## Session 11: Step 15 & 16 - Hallway Usability Test & Iteration
+- **Date & Task:** 12 Nov - Hallway Test & Label Clarity
+- **Prompt Used:**
+  > A first-time user tested the app. Here is what happened:
+  > - Where they hesitated or tapped the wrong thing: Hesitated at the Tomorrow's Prep stepper wondering if the number meant base regular prep or total including party orders.
+  > - What they said out loud: "Does 4.5 kg mean total food for tomorrow or what I need to cook extra?"
+  > Propose the smallest change that fixes this. Do not add features. Show me the change before you make it, then make it and tell me which files changed.
+- **What Worked:** Core flow completed in under 2 minutes. The tester easily entered daily logs and viewed suggestions.
+- **What Broke:** Mild ambiguity in the Tomorrow's Prep card between base suggested quantity and grand total after adding party extras.
+- **How I Fixed It:** Added explicit sub-header "Base Prep Target" above the steppers and refined the bottom summary line to "Total to cook tomorrow:".
+- **Commit Message:** `Fix prep label ambiguity found in hallway test`
+
+---
+
+## Session 12: Step 14 - Production Cleanup & Security Rules
+- **Date & Task:** 12 Nov - Firestore Rules & Final Cleanup
+- **Prompt Used:**
+  > Prepare the final version for submission. Do not add features.
+  > 1. Delete seed.html and any other test-only code.
+  > 2. Replace the open test-mode Firestore rules with a firestore.rules file that allows read and write only to the collections items, dayLogs, partyOrders, prepPlans, closingCounts and morningChecks, and denies everything else.
+  > 3. Update README.md with one-line scope, live link, how to run locally, what each Must-have does, and Known limits.
+- **What Worked:** Closed open Firestore security rules with production rules restricting access strictly to the 6 application collections. Documented local execution, data flows, and known limitations in README.md.
+- **What Broke:** None.
+- **How I Fixed It:** Verified security rules syntax and deployed configuration.
+- **Commit Message:** `Tighten Firestore rules and finalize README`

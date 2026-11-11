@@ -644,6 +644,7 @@ async function loadPrepScreen() {
         <span class="prep-note-badge">${note}</span>
       </div>
 
+      <div style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 4px;">Base Prep Target</div>
       <div class="prep-stepper-row">
         <button type="button" class="stepper-btn btn-minus" aria-label="Decrease quantity">&minus;</button>
         <div class="prep-qty-display">
@@ -656,7 +657,7 @@ async function loadPrepScreen() {
       ${partyExtraHtml}
 
       <div class="prep-total-line">
-        <span>Total Tomorrow:</span>
+        <span>Total to cook tomorrow:</span>
         <span class="total-val">${total} ${item.unit}</span>
       </div>
     `;
