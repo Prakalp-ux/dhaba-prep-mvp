@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+  Dhaba Prep Assistant MVP
+  Single-page web application for small dhaba and cafe kitchen management.
+  Mobile-first (360px+), plain HTML/CSS/JS with Firebase Cloud Firestore.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dhaba Prep Assistant</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-container">
+    <!-- Header with dynamic title and back button -->
+    <header id="app-header">
+      <button id="header-back-btn" class="back-btn hidden" aria-label="Go back to Home">
+        &larr; Back
+      </button>
+      <h1 id="header-title">Today</h1>
+      <div style="width: 48px;"><!-- Balance spacer --></div>
+    </header>
+
+    <main>
+      <!-- Screen A: Today (Home) -->
+      <section id="screen-today" class="screen">
+        <div class="today-header">
+          <div id="today-date-display" class="today-date">Today</div>
+        </div>
+
+        <nav class="home-menu" aria-label="Main Navigation">
+          <button id="nav-eod" class="big-btn">
+            <span>End-of-day log</span>
+            <span>&rarr;</span>
+          </button>
+
+          <button id="nav-prep" class="big-btn">
+            <span>Tomorrow's prep</span>
+            <span>&rarr;</span>
+          </button>
+
+          <button id="nav-closing" class="big-btn">
+            <span>Closing stock count</span>
+            <span>&rarr;</span>
+          </button>
+
+          <button id="nav-party" class="big-btn">
+            <span id="nav-party-label">Party orders</span>
+            <span id="nav-party-badge" class="badge">0 upcoming</span>
+          </button>
+        </nav>
+      </section>
+
+      <!-- Screen B: End-of-day log (Placeholder for Task 1) -->
+      <section id="screen-end-of-day" class="screen hidden">
+        <div class="placeholder-card">
+          <h2>End-of-day log</h2>
+          <p>Log Made, Left and Wasted quantities per prep item.</p>
+        </div>
+      </section>
+
+      <!-- Screen C: Tomorrow's prep (Placeholder for Task 3) -->
+      <section id="screen-prep" class="screen hidden">
+        <div class="placeholder-card">
+          <h2>Tomorrow's prep</h2>
+          <p>Rolling 7-day suggested quantities with plus/minus adjustments.</p>
+        </div>
+      </section>
+
+      <!-- Screen D: Closing count (Placeholder for Task 4) -->
+      <section id="screen-closing" class="screen hidden">
+        <div class="placeholder-card">
+          <h2>Closing stock count</h2>
+          <p>Shift handover count for critical ingredients.</p>
+        </div>
+      </section>
+
+      <!-- Screen D2: Since last night (Placeholder for Task 4) -->
+      <section id="screen-since-last-night" class="screen hidden">
+        <div class="placeholder-card">
+          <h2>Since last night</h2>
+          <p>Discrepancy and morning check verification.</p>
+        </div>
+      </section>
+
+      <!-- Screen E: Party order (Placeholder for Task 2) -->
+      <section id="screen-party" class="screen hidden">
+        <div class="placeholder-card">
+          <h2>Party orders</h2>
+          <p>Record upcoming bookings and bulk customer demands.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Toast / Alert message -->
+    <div id="toast" class="toast-msg hidden" role="status" aria-live="polite"></div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
