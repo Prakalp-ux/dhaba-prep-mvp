@@ -52,12 +52,44 @@
         </nav>
       </section>
 
-      <!-- Screen B: End-of-day log (Placeholder for Task 1) -->
+      <!-- Screen B: End-of-day log (Task 1, Must-have 1) -->
       <section id="screen-end-of-day" class="screen hidden">
-        <div class="placeholder-card">
-          <h2>End-of-day log</h2>
-          <p>Log Made, Left and Wasted quantities per prep item.</p>
+        <div class="eod-date-bar">
+          <label for="eod-date">Log Date:</label>
+          <input type="date" id="eod-date">
         </div>
+
+        <div id="eod-warning" class="alert-warning hidden" role="alert"></div>
+        <div id="eod-error" class="field-error hidden" style="margin-bottom: 12px; font-size: 14px;"></div>
+
+        <div id="eod-items-list">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <!-- Add prep item section -->
+        <div class="inline-add-box">
+          <button id="eod-show-add-btn" class="btn-secondary" style="font-size: 15px;">
+            + Add item
+          </button>
+          <div id="eod-add-form" class="hidden" style="margin-top: 10px;">
+            <div class="form-group">
+              <label for="new-prep-name">Item Name:</label>
+              <input type="text" id="new-prep-name" placeholder="e.g. Kadai Chicken, Chana Masala">
+            </div>
+            <div class="form-group">
+              <label for="new-prep-unit">Unit:</label>
+              <input type="text" id="new-prep-unit" placeholder="e.g. kg, L, portions" value="kg">
+            </div>
+            <div class="inline-add-row">
+              <button id="new-prep-save-btn" class="btn-primary" style="flex: 1; min-height: 44px; font-size: 15px;">Add</button>
+              <button id="new-prep-cancel-btn" class="btn-secondary" style="flex: 1; min-height: 44px; font-size: 15px;">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <button id="eod-save-btn" class="btn-primary">
+          Save Log
+        </button>
       </section>
 
       <!-- Screen C: Tomorrow's prep (Placeholder for Task 3) -->

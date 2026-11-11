@@ -45,3 +45,21 @@
 - **What Broke:** Local browser testing needed fallback resilience when Firebase API keys are still placeholders, to ensure the UI does not crash or throw unhandled exceptions during initial setup.
 - **How I Fixed It:** Added a clean automatic fallback adapter inside `js/db.js` that uses localStorage when placeholders are present, and seamlessly transitions to live Firebase Firestore once real credentials are provided.
 - **Commit Message:** `Add project skeleton with home screen and Firebase connection`
+
+---
+
+## Session 4: Task 1 - End-of-day Stock & Waste Log (Must-have 1)
+- **Date & Task:** 12 Nov - Task 1 End-of-day Log (Screen B)
+- **Prompt Used:**
+  > Build Task 1 only: the End-of-day log (screen B). Do not touch other screens.
+  > - Show a date at the top (default today, device date) with a small date picker so I can log a missed day.
+  > - One row per prep item (items with type 'prep'): Dal, Paneer, Mixed veg, Rice. Each row has three number inputs: Made, Left, Wasted, in the item's unit. Decimals allowed, numeric keypad on phones.
+  > - '+ Add item' lets me type a new item name and unit. It appears as a new row and is saved to 'items' with type 'prep'.
+  > - 'Save' writes ONE document to 'dayLogs' with the date as its id (saving the same date again replaces it). Empty fields are saved as 0. Reject negative numbers with a plain message under the field.
+  > - If a log already exists for the chosen date, open the screen with the values filled in.
+  > - If Left + Wasted is more than Made, show a warning but still allow saving.
+  > - After saving, show a clear 'Saved' message and return to Today.
+- **What Worked:** Successfully implemented End-of-day log with dynamic date selection, row per prep item, 3 number inputs (Made, Left, Wasted), dynamic '+ Add item' inline creation, and automatic reloading of saved values for any chosen date.
+- **What Broke:** If a user typed a negative value, simple browser alert was too intrusive for a phone screen.
+- **How I Fixed It:** Added inline red validation messages under the cards and blocked save until negative values are corrected. Added warning banner if `Left + Wasted > Made` while still allowing save.
+- **Commit Message:** `Add end-of-day log with made, left and wasted per item`

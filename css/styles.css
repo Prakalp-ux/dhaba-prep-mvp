@@ -276,3 +276,103 @@ textarea:focus {
   color: var(--text-main);
   margin-bottom: 8px;
 }
+
+/* Task 1: End-of-day log styles */
+.eod-date-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f5f9;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.eod-date-bar label {
+  font-size: 15px;
+}
+
+.eod-date-bar input[type="date"] {
+  min-height: 40px;
+  padding: 6px 10px;
+  font-size: 15px;
+  width: auto;
+}
+
+.eod-item-card {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.eod-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.eod-item-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.eod-item-unit {
+  font-size: 13px;
+  color: var(--text-muted);
+  background-color: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.eod-inputs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.eod-input-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eod-input-col span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.eod-input-col input {
+  text-align: center;
+  padding: 8px 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.inline-add-box {
+  background-color: #f8fafc;
+  border: 1.5px dashed var(--border-color);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.inline-add-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
